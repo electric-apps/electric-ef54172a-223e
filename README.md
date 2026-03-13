@@ -1,44 +1,36 @@
-# Kyle's Stack
+# Todo App
 
-A starter for building apps with TanStack Start, Radix UI, and capsize typography — with [`@tanstack/intent`](https://github.com/TanStack/intent) skills pre-installed for **Electric**, **TanStack DB**, and **Durable Streams**.
+A local-first, real-time todo application built with Electric SQL + TanStack DB. Create, complete, and delete todos — changes sync instantly across all open tabs and devices.
 
-## Quick Start
+## Screenshot
+
+![Todo App](screenshot.png)
+
+## Features
+
+- **Real-time sync** — todos update instantly across all open tabs via Electric SQL
+- **Optimistic mutations** — UI responds immediately, confirmed in the background
+- **Create todos** — add new tasks with a keyboard-friendly dialog
+- **Complete todos** — toggle completion with a checkbox; completed items get a strikethrough
+- **Delete todos** — remove tasks with a confirmation dialog
+- **Progress badge** — see completed/total count at a glance
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Sync | [Electric SQL](https://electric-sql.com) — Postgres-to-client real-time sync |
+| Reactive DB | [TanStack DB](https://tanstack.com/db) — live queries and optimistic mutations |
+| Schema/ORM | [Drizzle ORM](https://orm.drizzle.team) + drizzle-zod |
+| Framework | [TanStack Start](https://tanstack.com/start) — React SSR meta-framework |
+| UI | [Radix UI Themes](https://www.radix-ui.com/themes) + [Lucide React](https://lucide.dev) |
+
+## Getting Started
 
 ```bash
-npx gitpick KyleAMathews/kpb my-app
-cd my-app
 pnpm install
-pnpm dev
+pnpm drizzle-kit generate && pnpm drizzle-kit migrate
+pnpm dev:start
 ```
 
-## Included Skills
-
-This starter comes with skills pre-installed. Just ask your coding agent:
-
-**Electric** — Sync Postgres to your app
-- "Set up Electric sync for my Postgres database"
-- "Run the Electric security checklist"
-
-**TanStack DB** — Reactive client-side data
-- "Add a TanStack DB collection for the users table"
-- "Set up live queries for my todos"
-
-**Durable Streams** — Real-time state sync
-- "Set up a Durable Streams dev environment"
-- "Add presence tracking to my app"
-
-**Radix + Capsize** — Typography
-- "Switch to the Playfair theme"
-- "Show me more font theme options"
-
-## What's Included
-
-- **TanStack Start** - Full-stack React framework
-- **Radix UI** - Accessible components with themes
-- **Capsize typography** - Pixel-perfect text rendering
-- **Dozens of font pairings included** - Ask the agent to set one up
-- **Biome** - Fast linting and formatting
-
-## License
-
-MIT
+Open [http://localhost:8080](http://localhost:8080).
