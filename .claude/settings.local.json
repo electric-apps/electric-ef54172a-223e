@@ -1,0 +1,1 @@
+{"hooks":{"PreToolUse":[{"matcher":"AskUserQuestion","hooks":[{"type":"command","command":"/home/agent/workspace/electric-ef54172a-223e/.claude/hooks/forward.sh"}]}]}}
